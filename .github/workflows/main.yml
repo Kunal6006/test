@@ -52,9 +52,9 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@54.219.215.65 << 'EOF'
-            cd /path/to/your/project/directory
+            cd /home/ubuntu/nodejs/server.js
             git pull origin main
             npm install
             npm run build
-            pm2 restart your-app # or any other deployment command you use
+            pm2 restart 0 # or any other deployment command you use
           EOF
